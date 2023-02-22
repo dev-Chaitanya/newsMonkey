@@ -48,10 +48,10 @@ export class News extends Component {
 handelPrev= async ()=>{
     this.setState({loading:true});
     let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=8eca2f831cdb410480475e65794fabeb&page=${this.state.page -1}&pageSize=${this.props.pageSize}`;
-    let data=await fetch(url,    header:{
+    let data=await fetch(url,    {header:{
         Authorization:"Bearer 8eca2f831cdb410480475e65794fabeb",
         'Content-Type': 'application/json'
-                });
+                }});
     let parseData=await data.json();
     this.setState({loading:false});
 
@@ -67,10 +67,10 @@ handelNext= async ()=>{
     if(!(this.state.page+1>(Math.ceil(this.state.totalResult/this.props.pageSize)))){
         let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=8eca2f831cdb410480475e65794fabeb&page=${this.state.page +1}&pageSize=${this.props.pageSize}`;
         this.setState({loading:true});
-        let data=await fetch(url,    header:{
+        let data=await fetch(url,    {header:{
             Authorization:"Bearer 8eca2f831cdb410480475e65794fabeb",
             'Content-Type': 'application/json'
-                    });
+                    }});
         let parseData=await data.json();
         this.setState({loading:false});
         this.setState({

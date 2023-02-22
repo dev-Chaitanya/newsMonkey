@@ -26,10 +26,10 @@ export class Everything extends Component {
     }
     fetchData= async()=>{
         var urlNews=`https://newsapi.org/v2/everything?q=${this.state.Query}&apiKey=8eca2f831cdb410480475e65794fabeb&page=${this.state.page}&pageSize=5`;
-        let data= await fetch(urlNews,    header:{
+        let data= await fetch(urlNews,{header:{
             Authorization:"Bearer 8eca2f831cdb410480475e65794fabeb",
             'Content-Type': 'application/json'
-                    });
+                    }});
         this.setState({loading:true})
         let parseData= await data.json();
         this.setState({loading:true})
@@ -69,10 +69,10 @@ export class Everything extends Component {
     handelPrev= async()=>{
         var urlNews=`https://newsapi.org/v2/everything?q=${this.state.Query}&apiKey=8eca2f831cdb410480475e65794fabeb&page=${this.state.page-1}&pageSize=5`;
         this.setState({loading:true})
-        let data= await fetch(urlNews,    header:{
+        let data= await fetch(urlNews,{header:{
             Authorization:"Bearer 8eca2f831cdb410480475e65794fabeb",
             'Content-Type': 'application/json'
-                    });
+                    }});
             let parseData= await data.json();
             this.setState({loading:true})
                this.setState({
@@ -85,10 +85,10 @@ export class Everything extends Component {
         handelNext= async()=>{
             var urlNews=`https://newsapi.org/v2/everything?q=${this.state.Query}&apiKey=8eca2f831cdb410480475e65794fabeb&page=${this.state.page+1}&pageSize=5`;
             this.setState({loading:true})
-            let data= await fetch(urlNews,    header:{
+            let data= await fetch(urlNews,    {header:{
                 Authorization:"Bearer 8eca2f831cdb410480475e65794fabeb",
                 'Content-Type': 'application/json'
-                        });
+                        }});
             let parseData= await data.json();
             this.setState({loading:true})
                this.setState({
