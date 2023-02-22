@@ -1,0 +1,10 @@
+ <li className="nav-item">
+            <Link className="nav-link text-light" to="/business" >Business</Link>
+            <Link className="nav-link text-light" to="/entertainment" >Entertainment</Link>
+            <Link className="nav-link text-light" to="/general" >General</Link>
+            <Link className="nav-link text-light" to="/health" >Health</Link>
+            <Link className="nav-link text-light" to="/science" >Science</Link>
+            <Link className="nav-link text-light" to="/sports" >Sports</Link>
+            <Link className="nav-link text-light" to="/technology" >Technology</Link>
+            <Link className="nav-link text-light" to="/Everything" >Everything</Link>
+          </li>
